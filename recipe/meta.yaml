@@ -1,5 +1,5 @@
 {% set goname = "github.com/direnv/direnv" %}
-{% set version = "v2.28.0" %}
+{% set version = "2.28.0" %}
 
 {% set name = goname.split('/')[-1] %}
 {% set pkg_src = ('src/'+goname).replace("/",os.sep) %}
@@ -10,7 +10,7 @@ package:
 
 source:
   - folder: {{ pkg_src }}
-    url: https://{{ goname }}/archive/{{ version }}.tar.gz
+    url: https://{{ goname }}/archive/v{{ version }}.tar.gz
     sha256: fa539c63034b6161d8238299bb516dcec79e8905cd43ff2b9559ad6bf047cc93
 
 build:
@@ -32,7 +32,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: {{ pkg_src }}/LICENSE
-  summary: unclutter your .profile 
+  summary: unclutter your .profile
 
 extra:
   recipe-maintainers:
