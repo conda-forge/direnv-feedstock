@@ -1,5 +1,5 @@
 {% set goname = "github.com/direnv/direnv" %}
-{% set version = "2.33.0" %}
+{% set version = "2.34.0" %}
 
 {% set name = goname.split('/')[-1] %}
 {% set pkg_src = ('src/'+goname).replace("/",os.sep) %}
@@ -11,7 +11,7 @@ package:
 source:
   - folder: {{ pkg_src }}
     url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-    sha256: 8ef18051aa6bdcd6b59f04f02acdd0b78849b8ddbdbd372d4957af7889c903ea
+    sha256: 3d7067e71500e95d69eac86a271a6b6fc3f2f2817ba0e9a589524bf3e73e007c
 
 build:
   number: 0
