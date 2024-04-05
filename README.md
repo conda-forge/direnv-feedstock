@@ -205,4 +205,5 @@ Feedstock Maintainers
 =====================
 
 * [@daizeng1984](https://github.com/daizeng1984/)
+* [@wolfv](https://github.com/wolfv/)
 
