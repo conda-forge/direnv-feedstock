@@ -17,7 +17,9 @@ build:
   number: 0
   script:
     - pushd {{ pkg_src }}
-    - go install -v -ldflags "-X main.revision=conda-forge" .
+    - go build -v -ldflags "-X main.revision=conda-forge" . -o $PREFIX/bin/direnv  # [osx and arm64]
+    - go install -v -ldflags "-X main.revision=conda-forge" .  # [not (osx and arm64)]
+
 
 requirements:
   build:
