@@ -19,7 +19,7 @@ build:
     - pushd {{ pkg_src }}
     - go build -v -ldflags "-X main.revision=conda-forge" -o $PREFIX/bin/direnv  # [osx and arm64]
     - go install -v -ldflags "-X main.revision=conda-forge" .  # [not (osx and arm64)]
-    - go-licenses save . --save_path=${SRC_DIR}/license_files || true
+    - go-licenses save . --save_path={{ SRC_DIR }}/license_files || true
 
 
 requirements:
