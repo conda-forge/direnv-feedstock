@@ -1,5 +1,5 @@
-c_stdlib:
-- vs
+ace:
+- 8.0.1
 channel_sources:
 - conda-forge
 channel_targets:
