@@ -1,17 +1,13 @@
-BUILD:
-- aarch64-conda_cos7-linux-gnu
 ace:
-- 8.0.1
-cdt_arch:
-- aarch64
+- 8.0.2
 cdt_name:
-- cos7
+- conda
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
 docker_image:
-- quay.io/condaforge/linux-anvil-aarch64
+- quay.io/condaforge/linux-anvil-aarch64:alma9
 go_compiler:
 - go-nocgo
 target_platform:
