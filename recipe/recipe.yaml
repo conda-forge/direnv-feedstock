@@ -20,13 +20,13 @@ build:
         - go build -v -ldflags "-X main.revision=conda-forge" -o $PREFIX/bin/direnv
       else:
         - go install -v -ldflags "-X main.revision=conda-forge" .
-    - go-licenses save . --save_path={{ SRC_DIR }}/license_files || true
+    - go-licenses save . --save_path=${{ SRC_DIR }}/license_files || true
 
 
 requirements:
   build:
     - ${{ compiler('go') }}
-    - go-licenses >=1.0.0
+    - go-licenses
 
 tests:
   - script:
