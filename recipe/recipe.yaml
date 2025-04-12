@@ -1,0 +1,46 @@
+context:
+  name: direnv
+  version: "2.36.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version|replace("-", "_") }}
+
+source:
+  - target_directory: src
+    url: https://github.com/direnv/direnv/archive/v${{ version }}.tar.gz
+    sha256: edb89ca67ef46a792d4e20177dae9dbd229e26dcbcfb17baa9645c1ff7cc47b0
+
+build:
+  number: 0
+  script:
+    - pushd src
+    - if: osx and arm64
+      then:
+        - go build -v -ldflags "-X main.revision=conda-forge" -o $PREFIX/bin/direnv
+      else:
+        - go install -v -ldflags "-X main.revision=conda-forge" .
+    - go-licenses save . --save_path=${{ SRC_DIR }}/license_files || true
+
+
+requirements:
+  build:
+    - ${{ compiler('go') }}
+    - go-licenses
+
+tests:
+  - script:
+    - direnv --version
+
+about:
+  homepage: https://github.com/direnv/direnv
+  license: MIT
+  license_file:
+    - src/LICENSE
+    - license_files/
+  summary: unclutter your .profile
+
+extra:
+  recipe-maintainers:
+    - daizeng1984
+    - wolfv
