@@ -15,17 +15,17 @@ build:
   number: 1
   script:
     - pushd src
-    - if: osx and arm64
+    - if: unix
       then:
-        - go build -v -ldflags "-X main.revision=conda-forge" -o $PREFIX/bin/direnv
+        - go build -v -ldflags "-X main.revision=conda-forge -sw" -o $PREFIX/bin/direnv
       else:
-        - go install -v -ldflags "-X main.revision=conda-forge" .
+        - go build -v -ldflags "-X main.revision=conda-forge -s" -o %LIBRARY_BIN%\direnv.exe
     - go-licenses save . --save_path=${{ SRC_DIR }}/license_files || true
 
 
 requirements:
   build:
-    - ${{ compiler('go') }}
+    - ${{ compiler('go-nocgo') }}
     - go-licenses
 
 tests:
