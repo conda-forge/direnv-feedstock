@@ -17,9 +17,9 @@ build:
     - pushd src
     - if: unix
       then:
-        - go build -v -ldflags "-X main.revision=conda-forge -sw" -o $PREFIX/bin/direnv
+        - go build -v -ldflags "-X main.revision=conda-forge" -o $PREFIX/bin/direnv
       else:
-        - go build -v -ldflags "-X main.revision=conda-forge -s" -o %LIBRARY_BIN%\direnv.exe
+        - go build -v -ldflags "-X main.revision=conda-forge" -o %LIBRARY_BIN%\direnv.exe
     - go-licenses save . --save_path=${{ SRC_DIR }}/license_files || true
 
 
