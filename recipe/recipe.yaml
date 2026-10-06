@@ -1,6 +1,6 @@
 context:
   name: direnv
-  version: "2.37.1"
+  version: "2.38.1"
 
 package:
   name: ${{ name|lower }}
@@ -9,10 +9,10 @@ package:
 source:
   - target_directory: src
     url: https://github.com/direnv/direnv/archive/v${{ version }}.tar.gz
-    sha256: 4142fbb661f3218913fac08d327c415e87b3e66bd0953185294ff8f3228ead24
+    sha256: 3bd0d49c163204543db8f22f55af8985121db24fe6b21c5b749695e4fbdbb1fe
 
 build:
-  number: 1
+  number: 0
   script:
     - pushd src
     - if: unix
