@@ -214,8 +214,6 @@ Feedstock Maintainers
 =====================
 
 * [@daizeng1984](https://github.com/daizeng1984/)
+* [@pavelzw](https://github.com/pavelzw/)
 * [@wolfv](https://github.com/wolfv/)
-
-
-<!-- dummy commit to enable rerendering -->
 
